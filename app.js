@@ -7,40 +7,193 @@ const App = () => {
 
     // initial data
     const initialData = {
-        company: {
-            col1: '',
-            col2: '',
-            col3: '',
-            col4: '',
-            col5: ''
+        onBoardingCall: {
+            name: 'OnBoarding Call',
+            data: {
+                col1: '',
+                col2: '',
+                col3: '',
+                col4: '',
+                col5: '',
+                col6: ''
+            }
         },
-        position: {
-            col1: '',
-            col2: '',
-            col3: '',
-            col4: '',
-            col5: ''
+        googleSearchControlAccess: {
+            name: 'Google Search Control Access',
+            data: {
+                col1: '',
+                col2: '',
+                col3: '',
+                col4: '',
+                col5: '',
+                col6: ''
+            }
         },
-        link: {
-            col1: '',
-            col2: '',
-            col3: '',
-            col4: '',
-            col5: ''
+        googleAnalyticsAccess: {
+            name: 'Google Analytics Access',
+            data: {
+                col1: '',
+                col2: '',
+                col3: '',
+                col4: '',
+                col5: '',
+                col6: ''
+            }
         },
-        date: {
-            col1: '',
-            col2: '',
-            col3: '',
-            col4: '',
-            col5: ''
+        websiteAccess: {
+            name: 'Website Access',
+            data: {
+                col1: '',
+                col2: '',
+                col3: '',
+                col4: '',
+                col5: '',
+                col6: ''
+            }
         },
-        note: {
-            col1: '',
-            col2: '',
-            col3: '',
-            col4: '',
-            col5: ''
+        technicalAudit: {
+            name: 'Technical Audit',
+            data: {
+                col1: '',
+                col2: '',
+                col3: '',
+                col4: '',
+                col5: '',
+                col6: ''
+            }
+        },
+        anchorTextAndSemanticAnalysis: {
+            name: 'Anchor Text And Semantic Analysis',
+            data: {
+                col1: '',
+                col2: '',
+                col3: '',
+                col4: '',
+                col5: '',
+                col6: ''
+            }
+        },
+        competitorAnalysis: {
+            name: 'Competitor Analysis',
+            data: {
+                col1: '',
+                col2: '',
+                col3: '',
+                col4: '',
+                col5: '',
+                col6: ''
+            }
+        },
+        anchorTextURLMapping: {
+            name: 'Anchor Text/ URL Mapping',
+            data: {
+                col1: '',
+                col2: '',
+                col3: '',
+                col4: '',
+                col5: '',
+                col6: ''
+            }
+        },
+        googleDataStudioReportLocalReportingSuite: {
+            name: 'Google Data Studio Report + Local Reporting Suite',
+            data: {
+                col1: '',
+                col2: '',
+                col3: '',
+                col4: '',
+                col5: '',
+                col6: ''
+            }
+        },
+        siteLevelOptimization: {
+            name: 'Site Level Optimization',
+            data: {
+                col1: '',
+                col2: '',
+                col3: '',
+                col4: '',
+                col5: '',
+                col6: ''
+            }
+        },
+        onPageOptimizationContentCreation: {
+            name: 'On Page Optimization Content Creation',
+            data: {
+                col1: '',
+                col2: '',
+                col3: '',
+                col4: '',
+                col5: '',
+                col6: ''
+            }
+        },
+        contentPublishing: {
+            name: 'Content Publishing',
+            data: {
+                col1: '',
+                col2: '',
+                col3: '',
+                col4: '',
+                col5: '',
+                col6: ''
+            }
+        },
+        premiumPressRelease: {
+            name: 'Premium Press Release',
+            data: {
+                col1: '',
+                col2: '',
+                col3: '',
+                col4: '',
+                col5: '',
+                col6: '',
+                col6: ''
+            }
+        },
+        authorityNichePlacements: {
+            name: 'Authority Niche Placements',
+            data: {
+                col1: '',
+                col2: '',
+                col3: '',
+                col4: '',
+                col5: '',
+                col6: ''
+            }
+        },
+        reviewManagement: {
+            name: 'Review Management',
+            data: {
+                col1: '',
+                col2: '',
+                col3: '',
+                col4: '',
+                col5: '',
+                col6: ''
+            }
+        },
+        indexLinks: {
+            name: 'Index Links',
+            data: {
+                col1: '',
+                col2: '',
+                col3: '',
+                col4: '',
+                col5: '',
+                col6: ''
+            }
+        },
+        videoRecap: {
+            name: 'Video Recap',
+            data: {
+                col1: '',
+                col2: '',
+                col3: '',
+                col4: '',
+                col5: '',
+                col6: ''
+            }
         },
     };
 
@@ -61,9 +214,9 @@ const App = () => {
             })
             .catch(err => {
                 if (URL === '') {
-                    console.error("Custom Error: Add URL first");
+                    console.log("Custom Error: Add URL first");
                 }
-                else{
+                else {
                     console.log("Error occured: ", err);
                 }
             })
@@ -77,22 +230,22 @@ const App = () => {
         const { name, value } = e.target;
         let col = 'col' + (col_num + 1)
         const temp = { ...tableData };
-        temp[name][col.toString(2)] = value
+        temp[name]['data'][col.toString(2)] = value
         setTableData(temp)
     };
 
     return (
         <div>
-            <h1>Hello</h1>
+            <h1>Task-1</h1>
             <table>
                 <th>
-                    Test
+                    Month 1
                 </th>
                 {Object.keys(tableData).map((keyName, i) => (
                     <tr>
-                        <td>{keyName}</td>
-                        {Object.keys(tableData[keyName]).map((subkey, col_num) => (
-                            <input key={col_num} name={keyName} value={tableData[keyName][subkey]} onChange={(e) => handleInputChange(col_num, e)} />
+                        <td>{tableData[keyName]['name']}</td>
+                        {Object.keys(tableData[keyName]['data']).map((subkey, col_num) => (
+                            <input key={col_num} name={keyName} value={tableData[keyName]['data'][subkey]} onChange={(e) => handleInputChange(col_num, e)} />
                         ))}
                     </tr>
                 ))}
